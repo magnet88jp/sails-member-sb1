@@ -21,7 +21,7 @@ module.exports = {
   //   connection: 'someMysqlServer'
   // },
   models: {
-    connection: 'prodPostgresqlServer'
+    connection: 'somePostgresqlServer'
   }
 
   /***************************************************************************
