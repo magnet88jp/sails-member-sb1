@@ -19,13 +19,18 @@
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html
  */
  
-var url = require('url');
+var urlParse = require('url-parse');
 var trim = require('trim');
-var db = url.parse(process.env.DATABASE_URL);
-var host = db['host'] + ':' + db['port'];
+process.env.DATABASE_URL = 'postgres://bsyunlcnpfalcy:U3nn-sfRxe7os2Dif1m5OGfg74@ec2-54-235-199-36.compute-1.amazonaws.com:5432/d6ne8chcpgmboj';
+var db = urlParse(process.env.DATABASE_URL);
+var host = db['host'];
+console.log('DEBUG1:'+host);
 var user = db['user'];
+console.log('DEBUG2:'+user);
 var password = db['pass'];
+console.log('DEBUG3:'+password);
 var database = trim(db['path'], '/');
+console.log('DEBUG4:'+database);
 
 module.exports.connections = {
 
