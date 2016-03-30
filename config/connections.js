@@ -18,6 +18,14 @@
  * For more information on configuration, check out:
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html
  */
+ 
+var url = require('url');
+var trim = require('trim');
+var db = url.parse(process.env.DATABASE_URL);
+var host = db['host'] + ':' + db['port'];
+var user = db['user'];
+var password = db['pass'];
+var database = trim(db['path'], '/');
 
 module.exports.connections = {
 
@@ -76,10 +84,14 @@ module.exports.connections = {
   ***************************************************************************/
   somePostgresqlServer: {
     adapter: 'sails-postgresql',
-    host: 'YOUR_POSTGRES_SERVER_HOSTNAME_OR_IP_ADDRESS',
-    user: 'YOUR_POSTGRES_USER',
-    password: 'YOUR_POSTGRES_PASSWORD',
-    database: 'YOUR_POSTGRES_DB'
+//    host: 'YOUR_POSTGRES_SERVER_HOSTNAME_OR_IP_ADDRESS',
+//    user: 'YOUR_POSTGRES_USER',
+//    password: 'YOUR_POSTGRES_PASSWORD',
+//    database: 'YOUR_POSTGRES_DB'
+    host: host || 'YOUR_POSTGRES_SERVER_HOSTNAME_OR_IP_ADDRESS',
+    user: user || 'YOUR_POSTGRES_USER',
+    password: password || 'YOUR_POSTGRES_PASSWORD',
+    database: database || 'YOUR_POSTGRES_DB'
   }
 
 

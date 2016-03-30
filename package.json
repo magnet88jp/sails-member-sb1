@@ -22,6 +22,8 @@
     "rc": "1.0.1",
     "sails": "~0.12.1",
     "sails-disk": "~0.10.9"
+    "trim": "0.0.1",
+    "url": "^0.11.0"
   },
   "scripts": {
     "debug": "node debug app.js",
@@ -30,8 +32,10 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/anonymous node/sails user/sails-member-sb1.git"
+    "url": "git@github.com:magnet88jp/sails-member-sb1.git"
   },
   "author": "anonymous node/sails user",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+  }
 }

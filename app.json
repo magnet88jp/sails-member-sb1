@@ -1,0 +1,30 @@
+{
+    "name": "sails-member-sb1",
+    "description": "sails membership management app on Heroku",
+    "keywords": [
+        "Membership",
+        "Node.js",
+        "PostgreSQL"
+    ],
+    "website": "https://github.com/magnet88jp/sails-member-sb1",
+    "repository": "https://github.com/magnet88jp/sails-member-sb1",
+    "success_url": "/",
+    "env": {
+        "TZ": {
+            "description": "Your Time Zone.",
+            "required": false,
+            "value": "Asia/Tokyo"
+        },
+        "ADMINAUTH": {
+            "description": "Login Basic authentication(ex. USERNAME:CRYPT PASSWORD).",
+            "value": ""
+        },
+        "NODE_ENV": {
+            "description": "NODE_ENV",
+            "value": "production"
+        }
+    },
+    "addons": [
+        "heroku-postgresql:hobby-dev"
+    ]
+}
