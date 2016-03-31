@@ -30,6 +30,6 @@ module.exports.models = {
   // migrate: 'alter'
   //migrate: 'alter'
   //migrate: 'safe'
-  migrate: 'drop'
+  migrate: 'create'
 
 };
