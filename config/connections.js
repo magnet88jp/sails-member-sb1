@@ -22,6 +22,7 @@
 var urlParse = require('url-parse');
 //var trim = require('trim');
 //process.env.DATABASE_URL = 'postgres://bsyunlcnpfalcy:U3nn-sfRxe7os2Dif1m5OGfg74@ec2-54-235-199-36.compute-1.amazonaws.com:5432/d6ne8chcpgmboj';
+
 var db = urlParse(process.env.DATABASE_URL);
 console.log('DEBUG0:db='+JSON.stringify(db));
 var host = db['hostname'] || '';
@@ -34,6 +35,7 @@ console.log('DEBUG3:'+password);
 //var database = db['pathname'].trim('¥/');
 var database = db['pathname'].replace('/','')  || '';
 console.log('DEBUG4:'+database);
+
 
 module.exports.connections = {
 
